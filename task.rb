@@ -5,7 +5,9 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  puts names.push("斎藤")
+
+names << "斎藤"
+puts names
 
 end
 
@@ -15,7 +17,7 @@ def q2
 
   # 以下に回答を記載
 
-  array = array1.concat(array2)
+  array = array1+ array2
   puts array
 end
 
@@ -60,7 +62,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
- array.map!{ |n| n.to_i}
+ array.map!(&:to_i)
   # 以下は変更しないで下さい
   p array
 end
@@ -69,8 +71,8 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
- programming_languages.map{ |n| n .capitalize!}
- upper_case_programming_languages = programming_languages.map{ |n| n .upcase}
+ programming_languages.map(&:capitalize)
+ upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -81,20 +83,35 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+ names.each.with_index(1) do |n,i|
+    puts "会員No.#{i} #{n}さん"
+ end
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-
+  foods.each do |f|
+    if f.include?("うに")
+       puts "好物です"
+    else
+       puts "まあまあ好きです"
+  end
+end
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
+  sports.flatten!
+  sports.uniq!
+  puts "ユーザーの趣味一覧"
+  sports.each.with_index(1) do |f,i|
+    puts "No#{i} #{f}"
+  end
+
 
 end
 
@@ -102,7 +119,8 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  data_user = data[:user]
+puts data_user[:name]
 end
 
 def q13
@@ -110,6 +128,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
+  puts user_data.merge(update_data)
 
 end
 
@@ -117,7 +136,9 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+data.each_key do |key|
+   puts key
+end
 end
 
 def q15
@@ -125,6 +146,16 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+
+
+#puts "OK"  if data1.include?(age)
+
+#if data1.has_key?(age)
+#  puts "OK"
+#else
+# puts "NG"
+#end
+
 
 end
 
@@ -137,7 +168,11 @@ def q16
   ]
 
   # 以下に回答を記載
-
+#users0 =  users[0]
+#users0.each  do |key,value|
+#  puts "私の名前は#{value}です 年齢は#{value}歳です"
+#end
+#↑同じハッシュ内に二つvalueがあるので分からなかったです。
 end
 
 class UserQ17
