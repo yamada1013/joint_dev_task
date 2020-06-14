@@ -92,21 +92,33 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods.each do |f|
-    if f.include?("うに")
-       puts "好物です"
-    else
-       puts "まあまあ好きです"
-  end
-end
+  #foods.each do |f|
+  #  if f.include?("うに")
+  #     puts "好物です"
+  #  else
+  #     puts "まあまあ好きです"
+  #end
+#end
+# if 条件
+#　式1
+#else
+#  式2
+#end
+
+#　条件  ? 式1 : 式2
+#food.each do |f|
+#  f.include?("うに") : "好物です" ? "まあまあ好きです"
+#end
+
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  sports.flatten!
-  sports.uniq!
+  #sports.flatten!
+  #sports.uniq!
+  sports.flatten!.uniq!
   puts "ユーザーの趣味一覧"
   sports.each.with_index(1) do |f,i|
     puts "No#{i} #{f}"
@@ -119,8 +131,9 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  data_user = data[:user]
-puts data_user[:name]
+  #data_user = data[:user]
+#puts data_user[:name]
+puts data[:user][:name]
 end
 
 def q13
@@ -128,7 +141,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  puts user_data.merge(update_data)
+  user_data.merge!(update_data)
+  puts user_data
 
 end
 
@@ -136,9 +150,12 @@ def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-data.each_key do |key|
-   puts key
-end
+#data.each_key do |key|
+#   puts key
+#end
+
+puts data.keys
+
 end
 
 def q15
@@ -173,6 +190,12 @@ def q16
 #  puts "私の名前は#{value}です 年齢は#{value}歳です"
 #end
 #↑同じハッシュ内に二つvalueがあるので分からなかったです。
+
+puts "私の名前は#{users[0][:name]}です。年齢は#{users[0][:age]}歳です。"
+puts "私の名前は#{users[1][:name]}です。年齢は#{users[1][:age]}歳です。"
+puts "私の名前は#{users[2][:name]}です。年齢は#{users[2][:age]}歳です。"
+puts "私の名前は#{users[3][:name]}です。年齢は#{users[3][:age]}歳です。"
+
 end
 
 class UserQ17
