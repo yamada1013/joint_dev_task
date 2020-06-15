@@ -106,9 +106,13 @@ def q10
 #end
 
 #　条件  ? 式1 : 式2
-#food.each do |f|
-#  f.include?("うに") : "好物です" ? "まあまあ好きです"
+#foods.each do |f|
+#  value = f.include?("うに") ?   "好物です" :   "まあまあ好きです"
+#  puts value
 #end
+
+value = foods.include?("うに") ? "好物です" : "まあまあ好きです"
+puts value
 
 end
 
@@ -165,13 +169,16 @@ def q15
   # 以下に回答を記載
 
 
-#puts "OK"  if data1.include?(age)
+puts "OK"  if data1.has_key?(:age)
 
-#if data1.has_key?(age)
+#if data2.has_key?(:age)
 #  puts "OK"
 #else
-# puts "NG"
+ #puts "NG"
 #end
+
+value = data2.has_key?(:age) ? "OK" :  "NG"
+puts value
 
 
 end
