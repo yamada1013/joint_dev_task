@@ -169,7 +169,9 @@ def q15
   # 以下に回答を記載
 
 
-puts "OK"  if data1.has_key?(:age)
+#puts "OK"  if data1.has_key?(:age)
+
+puts data1.has_key?(:age) ? "OK" : "NG"
 
 #if data2.has_key?(:age)
 #  puts "OK"
@@ -177,8 +179,11 @@ puts "OK"  if data1.has_key?(:age)
  #puts "NG"
 #end
 
-value = data2.has_key?(:age) ? "OK" :  "NG"
-puts value
+#value = data2.has_key?(:age) ? "OK" :  "NG"
+#puts value
+
+puts  data2.has_key?(:age) ? "OK" :  "NG"
+
 
 
 end
